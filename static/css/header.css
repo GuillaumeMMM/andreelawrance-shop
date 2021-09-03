@@ -1,0 +1,12 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    background-color: turquoise;
+}
+
+.header-container > h1 {
+    font-size: 2rem;
+}
