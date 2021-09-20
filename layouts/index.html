@@ -4,7 +4,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title>André.e Lawrance</title>
+        <title>André·e Lawrance</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/header.css">
     </head>
@@ -12,15 +12,24 @@
     <body>
         {{ partial "header.html" . }}
 
-        {{ $products := getJSON "/data/products.json" }}
+        <!-- {{ $products := getJSON "/data/products.json" }} -->
 
-        <section class="container">
+        <main class="container">
+            <section class="sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="/shop">Shop</a></li>
+                        <li><a href="/looks">Photos</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </section>
             <div class="row">
-                {{ range $products }}
-                {{ partial "product.html" . }}
-                {{ end }}
+                <!-- {{ range $products }}
+                    {{ partial "product.html" . }}
+                {{ end }} -->
             </div>
-        </section>
+        </main>
 
         {{ partial "footer.html" }}
     </body>
