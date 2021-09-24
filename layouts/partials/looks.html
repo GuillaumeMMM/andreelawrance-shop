@@ -1,1 +1,11 @@
-chapter 2
+<div class="looks-container">
+    <div class="photos-container">
+        {{ $photos := getJSON "/data/photos.json" }}
+
+        {{ range $photos }}
+            <div class="photo-container">
+                <img src="{{.url}}" alt="{{.alt}}">
+            </div>
+        {{ end }}
+    </div>
+</div>

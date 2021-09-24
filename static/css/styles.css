@@ -6,10 +6,56 @@
 
 body {
     font-family: Arial Bold, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    min-height: 100vh;
+}
+
+.shader-background {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
 }
 
 main {
-    border: 1px solid red;
     display: flex;
     flex-wrap: nowrap;
+    position: relative;
+    flex: 1;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+}
+
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li { 
+    margin-bottom: 10px;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+}
+
+.sidebar ul a:hover {
+    text-decoration: underline;
+}
+
+.sidebar ul a, .sidebar ul a:hover, .sidebar ul a:visited {
+    color: black;
 }

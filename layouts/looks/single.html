@@ -2,10 +2,21 @@
     <title>André·e Lawrance - Chapter 2</title>
     <link rel="stylesheet" href="{{ "css/header.css" | relURL}}">
     <link rel="stylesheet" href="{{ "css/styles.css" | relURL}}">
+    <link rel="stylesheet" href="{{ "css/looks.css" | relURL}}">
 </head>
 
 {{ partial "header.html" . }}
-
+<div class="sidebar-container">
+    <section class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/looks">Photos</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+</div>
 {{ partial "looks.html" . }}
 
 {{ partial "footer.html" . }}

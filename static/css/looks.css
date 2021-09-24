@@ -1,0 +1,23 @@
+.looks-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.photos-container {
+    margin: 1rem;
+}
+
+.photo-container {
+    width: 600px;
+    margin-bottom: 1rem;
+}
+
+.photo-container img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 400px;
+}

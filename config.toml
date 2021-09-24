@@ -3,3 +3,6 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 custom_css = ["css/custom.css"]
+
+[Permalinks]
+    post = "/shop/:filename/"

@@ -1,1 +1,18 @@
-shop
+<div class="shop-container">
+    {{ $products := getJSON "/data/products.json" }}
+
+    {{ range $products }}
+        <div class="product-container">
+            <a href="/shop">
+                <div class="product-image">
+                    <img src="{{.imageUrl}}" class="primary-image">
+                    <img src="{{.imageUrl2}}" class="secondary-image">
+                    <span class="sizes">{{.sizes}}</span>
+                </div>
+                <div class="product-title">
+                    {{.name}}
+                </div>
+            </a>
+        </div>
+    {{ end }}
+</div>
