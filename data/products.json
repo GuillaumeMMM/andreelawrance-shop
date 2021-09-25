@@ -18,5 +18,25 @@
       "image": "/images/phaser.png",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
       "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Dictionnaire Klingon",
+      "price": 34.87,
+      "image": "/images/dictionary.jpg",
+      "sizes": "S M L XL",
+      "description": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Phaser du Captain Kirk",
+      "description": "The Original Series Phaser comprises a small, hand-held Type I Phaser, which slots into a larger Type II Phaser body with a removable pistol-grip.",
+      "price": 145.98,
+      "sizes": "ONE SIZE",
+      "image": "/images/phaser.png",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
     }
   ]

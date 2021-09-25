@@ -34,6 +34,7 @@ main {
     top: 0;
     left: 0;
     padding: 0 10px;
+    color: white;
 }
 
 .sidebar-container {
@@ -57,5 +58,5 @@ main {
 }
 
 .sidebar ul a, .sidebar ul a:hover, .sidebar ul a:visited {
-    color: black;
+    color: white;
 }

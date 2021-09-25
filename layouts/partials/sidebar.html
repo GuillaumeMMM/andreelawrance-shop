@@ -1,0 +1,18 @@
+<section class="sidebar">
+    <nav>
+        <ul>
+            {{ if not .IsHome }}
+                <li><a href="/">Home</a></li>
+            {{ end }}
+            {{ if ne .Title "Shop" }}
+                <li><a href="/shop">Shop</a></li>
+            {{ end }}
+            {{ if ne .Title "Photos" }}
+                <li><a href="/looks">Photos</a></li>
+            {{ end }}
+            {{ if ne .Title "Contact" }}
+                <li><a href="/contact">Contact</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</section>

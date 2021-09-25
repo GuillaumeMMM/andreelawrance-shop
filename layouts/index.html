@@ -1,91 +1,110 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title>André·e Lawrance</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/header.css">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
+    <title>André·e Lawrance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+
+
+    {{- define "shader-script" -}}
         <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
         <script type="x-shader/x-fragment" id="image">
-            precision highp float;
+                precision highp float;
 
-            uniform float iTime;
-            uniform vec2 iMouse;
-            uniform sampler2D iBackgroundTexture;
-            uniform vec2 iResolution;
-            uniform float iMouseOverLink1;
-            uniform float iMouseOverLink2;
-            uniform float iMouseOverLink3;
+                uniform float iTime;
+                uniform vec2 iMouse;
+                uniform sampler2D iBackgroundTexture;
+                uniform vec2 iResolution;
+                uniform float iWindowWidth;
+                uniform float iMouseOverLink1;
+                uniform float iMouseOverLink2;
+                uniform float iMouseOverLink3;
 
-            float greyScale(vec3 rgb) {
-                return dot(rgb, vec3(0.29, 0.60, 0.11));
-            }
-
-            vec3 heatMap(float greyValue) {   
-                vec3 heat;
-                heat.r = smoothstep(0.5, 0.8, greyValue);
-                if(greyValue >= 0.90) {
-                    heat.r *= (1.1 - greyValue) * 5.0;
-                }
-                if(greyValue > 0.7) {
-                    heat.g = smoothstep(1.0, 0.7, greyValue);
-                } else {
-                    heat.g = smoothstep(0.0, 0.7, greyValue);
-                }    
-                heat.b = smoothstep(1.0, 0.0, greyValue);  
-
-                if(0.3 >= greyValue) {
-                    heat.b = heat.b * greyValue / 0.3;
+                float greyScale(vec3 rgb) {
+                    return dot(rgb, vec3(0.29, 0.60, 0.11));
                 }
 
-                if (iMouseOverLink2 + iMouseOverLink1 + iMouseOverLink3 > 0.5) {
-                    heat.g = heat.r;
-                    heat.b = heat.r;
-                }
-                return heat;
-            }
-
-            float rand(vec2 co)
-            {
-                return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
-            }
-
-            void main() {
-                vec2 st = gl_FragCoord.xy / iResolution.xy;
-
-                st.x += .2;
-                st.y += .2;
-
-                float noise = rand(vec2(iTime * 0.00001 * st.y, st.y));
-               
-                if (iMouseOverLink1 > 0.5) {
-                    noise += sin(st.x + iTime / 10.);
+                float Noise21 (vec2 p, float ta, float tb) {
+                    return fract(sin(p.x*ta+p.y*tb)*5678.);
                 }
 
-                vec2 dist = vec2(iMouse.x / iResolution.x, iMouse.y / iResolution.y) - st.xy;
-                dist.x += .2;
-                dist.y += .2;
-                float mouse_pct = length(dist);
-                mouse_pct = smoothstep(0.05, 0.1 + sin(noise + st.y + st.x) - 0.5, mouse_pct);
+                vec3 heatMap(float greyValue) {   
+                    vec3 heat;
+                    heat.r = smoothstep(0.5, 0.8, greyValue);
+                    if(greyValue >= 0.90) {
+                        heat.r *= (1.1 - greyValue) * 5.0;
+                    }
+                    if(greyValue > 0.7) {
+                        heat.g = smoothstep(1.0, 0.7, greyValue);
+                    } else {
+                        heat.g = smoothstep(0.0, 0.7, greyValue);
+                    }    
+                    heat.b = smoothstep(1.0, 0.0, greyValue);  
 
-                float multiplier = (abs(sin(iTime / 2.)) / 5.) + 0.8; 
-
-                if (iMouseOverLink1 > 0.5) {
-                    mouse_pct += .5;
+                    if(0.3 >= greyValue) {
+                        heat.b = heat.b * greyValue / 0.3;
+                    }
+                    return heat;
                 }
 
-                if (iMouseOverLink3 > 0.5) {
-                    mouse_pct -= 1.;
+                float rand(vec2 co)
+                {
+                    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
                 }
 
-                vec4 color = texture2D(iBackgroundTexture, st);
+                void main() {
+                    vec2 coord = gl_FragCoord.xy;
 
-                gl_FragColor = vec4(heatMap(greyScale(color.xyz) * 0.8) + 1., 1.) * (mouse_pct) + vec4(heatMap(greyScale(color.xyz)), 1.) * (1. - mouse_pct);
-            }
-        </script>
+                    if (1000. > iWindowWidth) {
+                        coord.x += 1000.;
+                    } else {
+                        coord.x *= 1.5;
+                        coord.y *= 1.5;
+                    }
+                    vec2 st = coord.xy / iResolution.xy;
+
+                    //st.x += .2;
+                    //st.y += .2;
+
+                    st.y = 1. - st.y;
+
+                    float noise = rand(vec2(iTime * 0.00001 * st.y, st.y));
+
+                    vec2 dist = vec2(iMouse.x / iResolution.x, iMouse.y / iResolution.y) - st.xy;
+                    //dist.x += .2;
+                    //dist.y += .2;
+                    float mouse_pct = length(dist);
+                    mouse_pct = smoothstep(0.05, 0.1 + sin(noise) - 1.5, mouse_pct);
+
+                    float multiplier = (abs(sin(iTime / 2.)) / 5.) + 0.8; 
+
+                    vec4 color = texture2D(iBackgroundTexture, st);
+
+                    //gl_FragColor = vec4(heatMap(greyScale(color.xyz) * 0.8) + 1., 1.) * (mouse_pct) + vec4(heatMap(greyScale(color.xyz)), 1.) * (1. - mouse_pct);
+
+                    if (iMouseOverLink1 > 0.5) {
+                        color = vec4(heatMap(greyScale(color.xyz)), 1.) * (1. - mouse_pct);
+                    }
+
+                    if (iMouseOverLink2 > 0.5) {
+                        color = vec4(heatMap(greyScale(color.xyz)), 1.).rrra * (1. - mouse_pct);
+                    }
+
+                    if (iMouseOverLink3 > 0.5) {
+                        color = vec4(heatMap(sin(iTime * greyScale(color.xyz))), 1.) * (1. + mouse_pct);
+                    }
+                    float t = iTime+123.; // tweak the start moment
+                    float ta = t*.654321;
+                    float tb = t*(ta*.123456);
+                    float tvNoise = Noise21(st, ta, tb);
+
+                    gl_FragColor = color * (tvNoise + 0.5);
+                }
+            </script>
         <script>
             var mouseX;
             var mouseY;
@@ -121,78 +140,83 @@
             });
 
             shaderWebBackground.shade({
-            onInit: (ctx) => {
-                const image = new Image();
-                image.crossOrigin = "anonymous";
-                image.src = "https://live.staticflickr.com/65535/51511284292_49a0ea557b_c.jpg";
-                image.onload = () => {
-                const gl = ctx.gl;
-                const texture = gl.createTexture();
-                gl.bindTexture(gl.TEXTURE_2D, texture);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-                gl.bindTexture(gl.TEXTURE_2D, null);
-                ctx.iBackgroundTexture = texture;
+                onInit: (ctx) => {
+                    const image = new Image();
+                    image.crossOrigin = "anonymous";
+                    image.src = getImagePathFromPath(window.location.pathname.split(['/'])[1]);
+                    image.onload = () => {
+                        const gl = ctx.gl;
+                        const texture = gl.createTexture();
+                        gl.bindTexture(gl.TEXTURE_2D, texture);
+                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+                        gl.bindTexture(gl.TEXTURE_2D, null);
+                        ctx.iBackgroundTexture = texture;
 
-                mouseX = ctx.cssWidth / 2;
-                mouseY = ctx.cssHeight / 2;
+                        mouseX = ctx.cssWidth / 2;
+                        mouseY = ctx.cssHeight / 2;
+                    }
+                },
+                onBeforeFrame: (ctx) => {
+                    ctx.shaderMouseX = ctx.toShaderX(mouseX);
+                    ctx.shaderMouseY = ctx.toShaderY(mouseY);
+                    ctx.mouseoverLink1 = mouseoverLink1;
+                    ctx.mouseoverLink2 = mouseoverLink2;
+                    ctx.mouseoverLink3 = mouseoverLink3;
+                },
+                shaders: {
+                    image: {
+                        uniforms: {
+                            iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * (1024 / 556), ctx.height) : gl.uniform2f(loc, ctx.width * (1024 / 556), ctx.width),
+                            iWindowWidth: (gl, loc, ctx) => gl.uniform1f(loc, window.innerWidth),
+                            iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
+                            iBackgroundTexture: (gl, loc, ctx) => ctx.texture(loc, ctx.iBackgroundTexture),
+                            iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
+                            iMouseOverLink1: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink1 ? 1 : 0),
+                            iMouseOverLink2: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink2 ? 1 : 0),
+                            iMouseOverLink3: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink3 ? 1 : 0),
+                        }
+                    }
                 }
-            },
-            onBeforeFrame: (ctx) => {
-                ctx.shaderMouseX = ctx.toShaderX(mouseX);
-                ctx.shaderMouseY = ctx.toShaderY(mouseY);
-                ctx.mouseoverLink1 = mouseoverLink1;
-                ctx.mouseoverLink2 = mouseoverLink2;
-                ctx.mouseoverLink3 = mouseoverLink3;
-            },
-            shaders: {
-                image: {
-                uniforms: {
-                    iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * (1024 / 724), ctx.height) : gl.uniform2f(loc, ctx.width * (1024 / 724), ctx.width),
-                    iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
-                    iBackgroundTexture:    (gl, loc, ctx) => ctx.texture(loc, ctx.iBackgroundTexture),
-                    iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
-                    iMouseOverLink1: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink1 ? 1 : 0),
-                    iMouseOverLink2: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink2 ? 1 : 0),
-                    iMouseOverLink3: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink3 ? 1 : 0),
-                }
-                }
-            }
             });
-        </script>
-        <style>
-            .shader-web-background-fallback {
-              background: url("https://placekitten.com/666/666");
-              background-position: center;
-              background-size: cover;
-              background-attachment: fixed;
+
+            function getImagePathFromPath(pathName) {
+                switch (pathName) {
+                    case '': {
+                        return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_b.jpg";
+                    }
+                    default: {
+                        return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_b.jpg";
+                    }
+                }
             }
-          </style>
-    </head>
+        </script>
+    {{- end -}}
+    {{ block "shader-script" . }}{{ end }}
+    <style>
+        .shader-web-background-fallback {
+            background: url("https://placekitten.com/666/666");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
 
-    <body>
-        {{ partial "header.html" . }}
-        <div class="shader-background">
-            <canvas id="shader-web-background"></canvas>
-        </div>
+<body>
+    {{ partial "header.html" . }}
+    <div class="shader-background">
+        <canvas id="shader-web-background"></canvas>
+    </div>
 
-        <!-- {{ $products := getJSON "/data/products.json" }} -->
+    <main class="container">
+        {{ partial "sidebar.html" . }}
+    </main>
 
-        <main class="container">
-            <section class="sidebar">
-                <nav>
-                    <ul>
-                        <li><a href="/shop">Shop</a></li>
-                        <li><a href="/looks">Photos</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </main>
+    {{ partial "footer.html" }}
+</body>
 
-        {{ partial "footer.html" }}
-    </body>
 </html>

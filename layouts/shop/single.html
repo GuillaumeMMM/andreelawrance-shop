@@ -3,11 +3,21 @@
     <link rel="stylesheet" href="{{ "css/header.css" | relURL}}">
     <link rel="stylesheet" href="{{ "css/styles.css" | relURL}}">
     <link rel="stylesheet" href="{{ "css/shop.css" | relURL}}">
+
+    {{ block "shader-script" . }}{{ end }}
 </head>
 <body>
     {{ partial "header.html" . }}
 
-    {{ partial "shop.html" . }}
+    <div class="shader-background">
+        <canvas id="shader-web-background"></canvas>
+    </div>
+
+    <main class="container">
+        {{ partial "sidebar.html" . }}
+
+        {{ partial "shop.html" . }}
+    </main>
     
     {{ partial "footer.html" . }}
 </body>
