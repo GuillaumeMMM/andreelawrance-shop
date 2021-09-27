@@ -1,13 +1,34 @@
 [
     {
       "id": "1",
-      "name": "Dictionnaire Klingon",
+      "name": "Rain Jacket",
       "price": 34.87,
       "image": "/images/dictionary.jpg",
       "sizes": "S M L XL",
       "description": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/rainjacket",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
+        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"}
+      ]
     },
     {
       "id": "2",

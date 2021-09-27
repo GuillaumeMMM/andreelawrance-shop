@@ -1,20 +1,30 @@
-<div class="col s6">
-    <h2 class="header">{{ .name }}</h2>
-    <div class="card horizontal">
-        <div class="card-image">
-            <img src="{{ .image }}" />
-        </div>
-        <div class="card-stacked">
-            <div class="card-content">
-                <p>{{ .description }}</p>
+<div class="product-page-container">
+    {{ $products := getJSON "/data/products.json" }}
+
+    {{ range where $products "name" .Title}}
+        <div class="product-page-item">
+            <div class="product-page-images">
+                {{ $productImages := .imagesUrls }}
+
+                {{ range $productImages}}
+                    <img src="{{.src}}">
+                {{ end }}
             </div>
-            <div class="card-action">
-                <button class="snipcart-add-item waves-effect waves-light btn" data-item-id="{{ .id }}"
-                    data-item-name="{{ .name }}" data-item-price="{{ .price }}" data-item-url="{{ .url }}">
-                    <i class="material-icons right">shopping_cart</i>
-                    Add to cart
-                </button>
+            <div class="product-page-description">
+                <div class="product-page-description-content">
+                    <div class="product-page-header">
+                        <h2 class="product-page-title">
+                            {{ .name }}
+                        </h2>
+                        <div class="product-page-price">{{.price}} €</div>
+                    </div>
+                    {{ $productDescription := .descriptionParagraphs }}
+
+                    {{ range $productDescription}}
+                        <p class="product-page-paragraph">{{.text}}</p>
+                    {{ end }}
+                </div>
             </div>
         </div>
-    </div>
+    {{ end }}
 </div>

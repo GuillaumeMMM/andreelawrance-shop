@@ -127,6 +127,9 @@
                 document.querySelectorAll('li')[2].addEventListener("mouseover", (event) => {
                     mouseoverLink3 = true;
                 });
+                document.querySelectorAll('li')[3]?.addEventListener("mouseover", (event) => {
+                    mouseoverLink1 = true;
+                });
 
                 document.querySelectorAll('li')[0].addEventListener("mouseout", (event) => {
                     mouseoverLink1 = false;
@@ -137,7 +140,12 @@
                 document.querySelectorAll('li')[2].addEventListener("mouseout", (event) => {
                     mouseoverLink3 = false;
                 });
+                document.querySelectorAll('li')[3]?.addEventListener("mouseout", (event) => {
+                    mouseoverLink1 = false;
+                });
             });
+
+            const ratio = getImageRatioFromPath(window.location.pathname.split(['/'])[1]);
 
             shaderWebBackground.shade({
                 onInit: (ctx) => {
@@ -170,7 +178,7 @@
                 shaders: {
                     image: {
                         uniforms: {
-                            iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * (1024 / 556), ctx.height) : gl.uniform2f(loc, ctx.width * (1024 / 556), ctx.width),
+                            iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * ratio, ctx.height) : gl.uniform2f(loc, ctx.width * ratio, ctx.width),
                             iWindowWidth: (gl, loc, ctx) => gl.uniform1f(loc, window.innerWidth),
                             iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
                             iBackgroundTexture: (gl, loc, ctx) => ctx.texture(loc, ctx.iBackgroundTexture),
@@ -188,8 +196,22 @@
                     case '': {
                         return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_b.jpg";
                     }
+                    /* case 'contact': {
+                        return 'https://live.staticflickr.com/65535/51513016520_07526f9926_b.jpg';
+                    } */
                     default: {
                         return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_b.jpg";
+                    }
+                }
+            }
+
+            function getImageRatioFromPath(pathName) {
+                switch (pathName) {
+                    case '': {
+                        return 1024 / 556;
+                    }
+                    default: {
+                        return 1024 / 556;
                     }
                 }
             }
@@ -207,13 +229,16 @@
 </head>
 
 <body>
-    {{ partial "header.html" . }}
     <div class="shader-background">
         <canvas id="shader-web-background"></canvas>
     </div>
 
     <main class="container">
-        {{ partial "sidebar.html" . }}
+        <div class="fixed-content">
+            {{ partial "header.html" . }}
+
+            {{ partial "sidebar.html" . }}
+        </div>
     </main>
 
     {{ partial "footer.html" }}

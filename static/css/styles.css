@@ -11,6 +11,8 @@ body {
     height: 100vh;
     position: relative;
     min-height: 100vh;
+    background-color: black;
+    color: white;
 }
 
 .shader-background {
@@ -23,10 +25,7 @@ body {
 }
 
 main {
-    display: flex;
-    flex-wrap: nowrap;
     position: relative;
-    flex: 1;
 }
 
 .sidebar {
@@ -35,6 +34,10 @@ main {
     left: 0;
     padding: 0 10px;
     color: white;
+}
+
+.container {
+    flex: 1;
 }
 
 .sidebar-container {
@@ -59,4 +62,38 @@ main {
 
 .sidebar ul a, .sidebar ul a:hover, .sidebar ul a:visited {
     color: white;
+}
+
+.fixed-content {
+    position: fixed;
+    z-index: 10;
+}
+
+.footer-container {
+    color: white;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contact-container a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar ul {
+        display: flex;
+    }
+
+    .sidebar ul li {
+        margin-right: 10px;
+    }
 }

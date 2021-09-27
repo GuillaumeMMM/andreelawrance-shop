@@ -2,10 +2,23 @@
     <title>André·e Lawrance - Contact</title>
     <link rel="stylesheet" href="{{ "css/header.css" | relURL}}">
     <link rel="stylesheet" href="{{ "css/styles.css" | relURL}}">
+
+    {{ block "shader-script" . }}{{ end }}
 </head>
+<body>
+    <div class="shader-background">
+        <canvas id="shader-web-background"></canvas>
+    </div>
 
-{{ partial "header.html" . }}
+    <main class="container">
+        <div class="fixed-content">
+            {{ partial "header.html" . }}
 
-{{ partial "contact.html" . }}
+            {{ partial "sidebar.html" . }}
+        </div>
 
-{{ partial "footer.html" . }}
+        {{ partial "contact.html" . }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+</body>

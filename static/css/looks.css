@@ -5,6 +5,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     flex: 1;
+    margin-top: 5rem;
 }
 
 .photos-container {
@@ -13,7 +14,7 @@
 
 .photo-container {
     width: 600px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .photo-container img {

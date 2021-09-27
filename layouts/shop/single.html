@@ -7,14 +7,16 @@
     {{ block "shader-script" . }}{{ end }}
 </head>
 <body>
-    {{ partial "header.html" . }}
-
     <div class="shader-background">
         <canvas id="shader-web-background"></canvas>
     </div>
 
     <main class="container">
-        {{ partial "sidebar.html" . }}
+        <div class="fixed-content">
+            {{ partial "header.html" . }}
+
+            {{ partial "sidebar.html" . }}
+        </div>
 
         {{ partial "shop.html" . }}
     </main>
