@@ -84,7 +84,7 @@ a, a:hover, a:visited {
 .product-page-description {
     min-width: 300px;
     flex: 1;
-    padding-left: 10px;
+    padding-left: 1rem;
     position: relative;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
