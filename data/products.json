@@ -1,11 +1,10 @@
 [
     {
       "id": "1",
+      "shopifyId": "7120413130905",
       "name": "Rain Jacket",
-      "price": 34.87,
-      "image": "/images/dictionary.jpg",
-      "sizes": "S M L XL",
-      "description": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'",
+      "price": 220,
+      "sizes": "S M",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
       "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
       "url": "/shop/rainjacket",
@@ -16,48 +15,140 @@
         {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
       ],
       "descriptionParagraphs": [
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"},
-        {"text": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'"}
+        {"text": "Dark blue waterproof jacket with front zipper. Fully lined in satin. A tribute to going strawberry picking on a rainy day."}
       ]
     },
     {
       "id": "2",
-      "name": "Phaser du Captain Kirk",
-      "description": "The Original Series Phaser comprises a small, hand-held Type I Phaser, which slots into a larger Type II Phaser body with a removable pistol-grip.",
-      "price": 145.98,
-      "sizes": "ONE SIZE",
-      "image": "/images/phaser.png",
+      "name": "Rain Shorts",
+      "shopifyId": "7127650402457",
+      "price": 110,
+      "sizes": "S M",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/rainshorts",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Dark blue waterproof shorts with flex elastic waistband and integrated cinch belt & pockets on the sides. Made for keeping the tights dry."}
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Beginner T-shirt",
+      "shopifyId": "7127651942553",
+      "price": 40,
+      "sizes": "S M L XL",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/rainjacket",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes. Being a beginner is a permanent state."}
+      ]
+    },
+    {
+      "id": "7",
+      "name": "André·e T-shirt",
+      "shopifyId": "7127652630681",
+      "price": 40,
+      "sizes": "S M L XL",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/rainjacket",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes."}
+      ]
     },
     {
       "id": "3",
-      "name": "Dictionnaire Klingon",
-      "price": 34.87,
-      "image": "/images/dictionary.jpg",
-      "sizes": "S M L XL",
-      "description": "nIvbogh tlhIngan dictionary qaStaHvIS veng SuvwI'",
+      "name": "Grocery Bag 1",
+      "price": 90,
+      "shopifyId": "7127653384345",
+      "sizes": "ONE SIZE",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/grocerybag1",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
+      ]
     },
     {
       "id": "4",
-      "name": "Phaser du Captain Kirk",
-      "description": "The Original Series Phaser comprises a small, hand-held Type I Phaser, which slots into a larger Type II Phaser body with a removable pistol-grip.",
-      "price": 145.98,
+      "name": "Grocery Bag 2",
+      "shopifyId": "7127654989977",
+      "price": 90,
       "sizes": "ONE SIZE",
-      "image": "/images/phaser.png",
       "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg"
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/grocerybag2",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Grocery Bag 3",
+      "shopifyId": "7127655350425",
+      "price": 90,
+      "sizes": "ONE SIZE",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/grocerybag3",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Grocery Bag 4",
+      "shopifyId": "7127655448729",
+      "price": 90,
+      "sizes": "ONE SIZE",
+      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
+      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "url": "/shop/grocerybag4",
+      "imagesUrls": [
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"},
+        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg"}
+      ],
+      "descriptionParagraphs": [
+        {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
+      ]
     }
   ]

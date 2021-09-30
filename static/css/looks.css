@@ -22,3 +22,10 @@
     object-fit: cover;
     max-height: 400px;
 }
+
+@media screen and (max-width: 600px) {
+    .photo-container {
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+}

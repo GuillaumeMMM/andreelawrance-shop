@@ -16,6 +16,7 @@
                         <h2 class="product-page-title">
                             {{ .name }}
                         </h2>
+                        <span id="shopify-id">{{.shopifyId}}</span>
                         <div class="product-page-price">{{.price}} €</div>
                     </div>
                     {{ $productDescription := .descriptionParagraphs }}
@@ -53,7 +54,7 @@
                         });
                         ShopifyBuy.UI.onReady(client).then(function (ui) {
                           ui.createComponent('product', {
-                            id: '7120413130905',
+                            id: document.getElementById("shopify-id")?.textContent,
                             node: document.getElementById('product-component-1632768803665'),
                             moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
                             options: {
@@ -180,7 +181,8 @@
                             "font-family": "Arial, sans-serif"
                           },
                           "select": {
-                            "font-family": "Arial, sans-serif"
+                            "font-family": "Arial, sans-serif",
+                            "cursor":"pointer"
                           }
                         }
                       },

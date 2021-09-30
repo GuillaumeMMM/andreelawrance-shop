@@ -117,6 +117,7 @@ h2.product-page-title {
 
 .product-page-paragraph {
     margin-bottom: 1rem;
+    line-height: 1.5rem;
 }
 
 @media screen and (max-width: 1000px) {
@@ -150,5 +151,9 @@ h2.product-page-title {
     .product-page-container {
         width: 90%;
         margin-top: 7rem;
+    }
+
+    .product-page-images img {
+        margin-bottom: 1rem !important;
     }
 }

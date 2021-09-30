@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     background-color: black;
     color: white;
+    letter-spacing: 0.2px;
 }
 
 .shader-background {
@@ -86,6 +87,12 @@ main {
 
 .contact-container a:hover {
     text-decoration: underline;
+}
+
+#shopify-id {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
 }
 
 @media screen and (max-width: 600px) {

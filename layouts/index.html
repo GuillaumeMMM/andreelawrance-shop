@@ -95,7 +95,7 @@
                     }
 
                     if (iMouseOverLink3 > 0.5) {
-                        color = vec4(heatMap(sin(iTime * greyScale(color.xyz))), 1.) * (1. + mouse_pct);
+                        color = vec4(vec3(greyScale(heatMap(sin(iTime * greyScale(color.xyz))))), 1.) * (1. + mouse_pct);
                     }
                     float t = iTime+123.; // tweak the start moment
                     float ta = t*.654321;
