@@ -11,8 +11,8 @@
 
 
     {{- define "shader-script" -}}
-        <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
-        <script type="x-shader/x-fragment" id="image">
+    <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
+    <script type="x-shader/x-fragment" id="image">
                 precision highp float;
 
                 uniform float iTime;
@@ -105,122 +105,141 @@
                     gl_FragColor = color * (tvNoise + 0.5);
                 }
             </script>
-        <script>
-            var mouseX;
-            var mouseY;
-            let mouseoverLink1 = false;
-            let mouseoverLink2 = false;
-            let mouseoverLink3 = false;
+    <script>
+        var mouseX;
+        var mouseY;
+        let mouseoverLink1 = false;
+        let mouseoverLink2 = false;
+        let mouseoverLink3 = false;
 
-            document.addEventListener("mousemove", (event) => {
-                mouseX = event.clientX;
-                mouseY = event.clientY;
+        document.addEventListener("mousemove", (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        setTimeout(() => {
+            document.querySelectorAll('li')[0].addEventListener("mouseover", (event) => {
+                mouseoverLink1 = true;
+            });
+            document.querySelectorAll('li')[1].addEventListener("mouseover", (event) => {
+                mouseoverLink2 = true;
+            });
+            document.querySelectorAll('li')[2].addEventListener("mouseover", (event) => {
+                mouseoverLink3 = true;
+            });
+            document.querySelectorAll('li')[3]?.addEventListener("mouseover", (event) => {
+                mouseoverLink1 = true;
             });
 
-            setTimeout(() => {
-                document.querySelectorAll('li')[0].addEventListener("mouseover", (event) => {
-                    mouseoverLink1 = true;
-                });
-                document.querySelectorAll('li')[1].addEventListener("mouseover", (event) => {
-                    mouseoverLink2 = true;
-                });
-                document.querySelectorAll('li')[2].addEventListener("mouseover", (event) => {
-                    mouseoverLink3 = true;
-                });
-                document.querySelectorAll('li')[3]?.addEventListener("mouseover", (event) => {
-                    mouseoverLink1 = true;
-                });
-
-                document.querySelectorAll('li')[0].addEventListener("mouseout", (event) => {
-                    mouseoverLink1 = false;
-                });
-                document.querySelectorAll('li')[1].addEventListener("mouseout", (event) => {
-                    mouseoverLink2 = false;
-                });
-                document.querySelectorAll('li')[2].addEventListener("mouseout", (event) => {
-                    mouseoverLink3 = false;
-                });
-                document.querySelectorAll('li')[3]?.addEventListener("mouseout", (event) => {
-                    mouseoverLink1 = false;
-                });
+            document.querySelectorAll('li')[0].addEventListener("mouseout", (event) => {
+                mouseoverLink1 = false;
             });
-
-            const ratio = getImageRatioFromPath(window.location.pathname.split(['/'])[1]);
-
-            shaderWebBackground.shade({
-                onInit: (ctx) => {
-                    const image = new Image();
-                    image.crossOrigin = "anonymous";
-                    image.src = getImagePathFromPath(window.location.pathname.split(['/'])[1]);
-                    image.onload = () => {
-                        const gl = ctx.gl;
-                        const texture = gl.createTexture();
-                        gl.bindTexture(gl.TEXTURE_2D, texture);
-                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-                        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-                        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-                        gl.bindTexture(gl.TEXTURE_2D, null);
-                        ctx.iBackgroundTexture = texture;
-
-                        mouseX = ctx.cssWidth / 2;
-                        mouseY = ctx.cssHeight / 2;
-                    }
-                },
-                onBeforeFrame: (ctx) => {
-                    ctx.shaderMouseX = ctx.toShaderX(mouseX);
-                    ctx.shaderMouseY = ctx.toShaderY(mouseY);
-                    ctx.mouseoverLink1 = mouseoverLink1;
-                    ctx.mouseoverLink2 = mouseoverLink2;
-                    ctx.mouseoverLink3 = mouseoverLink3;
-                },
-                shaders: {
-                    image: {
-                        uniforms: {
-                            iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * ratio, ctx.height) : gl.uniform2f(loc, ctx.width * ratio, ctx.width),
-                            iWindowWidth: (gl, loc, ctx) => gl.uniform1f(loc, window.innerWidth),
-                            iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
-                            iBackgroundTexture: (gl, loc, ctx) => ctx.texture(loc, ctx.iBackgroundTexture),
-                            iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
-                            iMouseOverLink1: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink1 ? 1 : 0),
-                            iMouseOverLink2: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink2 ? 1 : 0),
-                            iMouseOverLink3: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink3 ? 1 : 0),
-                        }
-                    }
-                }
+            document.querySelectorAll('li')[1].addEventListener("mouseout", (event) => {
+                mouseoverLink2 = false;
             });
+            document.querySelectorAll('li')[2].addEventListener("mouseout", (event) => {
+                mouseoverLink3 = false;
+            });
+            document.querySelectorAll('li')[3]?.addEventListener("mouseout", (event) => {
+                mouseoverLink1 = false;
+            });
+        });
 
-            function getImagePathFromPath(pathName) {
-                switch (pathName) {
-                    case '': {
-                        return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_b.jpg";
-                    }
-                    /* case 'contact': {
-                        return 'https://live.staticflickr.com/65535/51513016520_07526f9926_b.jpg';
-                    } */
-                    default: {
-                        return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_b.jpg";
+        const ratio = getImageRatioFromPath(window.location.pathname.split(['/'])[1]);
+
+        shaderWebBackground.shade({
+            onInit: (ctx) => {
+                initImage(getImagePathFromPathFallback(window.location.pathname.split(['/'])[1]), ctx);
+
+                setTimeout(() => {
+                    initImage(getImagePathFromPath(window.location.pathname.split(['/'])[1]), ctx);
+                });
+            },
+            onBeforeFrame: (ctx) => {
+                ctx.shaderMouseX = ctx.toShaderX(mouseX);
+                ctx.shaderMouseY = ctx.toShaderY(mouseY);
+                ctx.mouseoverLink1 = mouseoverLink1;
+                ctx.mouseoverLink2 = mouseoverLink2;
+                ctx.mouseoverLink3 = mouseoverLink3;
+            },
+            shaders: {
+                image: {
+                    uniforms: {
+                        iResolution: (gl, loc, ctx) => ctx.height > ctx.width ? gl.uniform2f(loc, ctx.height * ratio, ctx.height) : gl.uniform2f(loc, ctx.width * ratio, ctx.width),
+                        iWindowWidth: (gl, loc, ctx) => gl.uniform1f(loc, window.innerWidth),
+                        iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
+                        iBackgroundTexture: (gl, loc, ctx) => ctx.texture(loc, ctx.iBackgroundTexture),
+                        iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
+                        iMouseOverLink1: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink1 ? 1 : 0),
+                        iMouseOverLink2: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink2 ? 1 : 0),
+                        iMouseOverLink3: (gl, loc, ctx) => gl.uniform1f(loc, ctx.mouseoverLink3 ? 1 : 0),
                     }
                 }
             }
+        });
 
-            function getImageRatioFromPath(pathName) {
-                switch (pathName) {
-                    case '': {
-                        return 1024 / 556;
-                    }
-                    default: {
-                        return 1024 / 556;
-                    }
+        const initImage = (url, ctx) => {
+            const image = new Image();
+            image.crossOrigin = "anonymous";
+            image.src = url;
+            image.onload = () => {
+                const gl = ctx.gl;
+                const texture = gl.createTexture();
+                gl.bindTexture(gl.TEXTURE_2D, texture);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+                gl.bindTexture(gl.TEXTURE_2D, null);
+                ctx.iBackgroundTexture = texture;
+
+                mouseX = ctx.cssWidth / 2;
+                mouseY = ctx.cssHeight / 2;
+            }
+        }
+
+        function getImagePathFromPath(pathName) {
+            switch (pathName) {
+                case '': {
+                    return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_b.jpg";
+                }
+                /* case 'contact': {
+                    return 'https://live.staticflickr.com/65535/51513016520_07526f9926_b.jpg';
+                } */
+                default: {
+                    return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_b.jpg";
                 }
             }
-        </script>
+        }
+
+        function getImagePathFromPathFallback(pathName) {
+            switch (pathName) {
+                case '': {
+                    return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6.jpg";
+                }
+                default: {
+                    return "https://live.staticflickr.com/65535/51501576810_f05e1b7694.jpg";
+                }
+            }
+        }
+
+        function getImageRatioFromPath(pathName) {
+            switch (pathName) {
+                case '': {
+                    return 1024 / 556;
+                }
+                default: {
+                    return 1024 / 556;
+                }
+            }
+        }
+    </script>
     {{- end -}}
     {{ block "shader-script" . }}{{ end }}
     <style>
         .shader-web-background-fallback {
-            background: url("https://placekitten.com/666/666");
+            background: url("https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6.jpg");
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
