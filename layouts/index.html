@@ -149,11 +149,7 @@
 
         shaderWebBackground.shade({
             onInit: (ctx) => {
-                initImage(getImagePathFromPathFallback(window.location.pathname.split(['/'])[1]), ctx);
-
-                setTimeout(() => {
-                    initImage(getImagePathFromPath(window.location.pathname.split(['/'])[1]), ctx);
-                });
+                initImage(getImagePathFromPathFallback(window.location.pathname.split(['/'])[1]), ctx, true);
             },
             onBeforeFrame: (ctx) => {
                 ctx.shaderMouseX = ctx.toShaderX(mouseX);
@@ -178,10 +174,11 @@
             }
         });
 
-        const initImage = (url, ctx) => {
+        const initImage = (url, ctx, isFallback = false) => {
             const image = new Image();
             image.crossOrigin = "anonymous";
             image.src = url;
+
             image.onload = () => {
                 const gl = ctx.gl;
                 const texture = gl.createTexture();
@@ -196,6 +193,10 @@
 
                 mouseX = ctx.cssWidth / 2;
                 mouseY = ctx.cssHeight / 2;
+
+                if (isFallback) {
+                    initImage(getImagePathFromPath(window.location.pathname.split(['/'])[1]), ctx, false);
+                }
             }
         }
 
@@ -204,9 +205,12 @@
                 case '': {
                     return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_b.jpg";
                 }
-                /* case 'contact': {
-                    return 'https://live.staticflickr.com/65535/51513016520_07526f9926_b.jpg';
-                } */
+                case 'looks': {
+                    return 'https://live.staticflickr.com/65535/51535128352_78575f58fb_b.jpg';
+                }
+                case 'shop': {
+                    return 'https://live.staticflickr.com/65535/51536640879_740a4654b0_b.jpg';
+                }
                 default: {
                     return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_b.jpg";
                 }
@@ -218,6 +222,12 @@
                 case '': {
                     return "https://live.staticflickr.com/65535/51512308108_ba0e9fb1f6_m.jpg";
                 }
+                case 'looks': {
+                    return 'https://live.staticflickr.com/65535/51536640879_740a4654b0_m.jpg'
+                }
+                case 'shop': {
+                    return 'https://live.staticflickr.com/65535/51536640879_740a4654b0_m.jpg';
+                }
                 default: {
                     return "https://live.staticflickr.com/65535/51501576810_f05e1b7694_m.jpg";
                 }
@@ -228,6 +238,12 @@
             switch (pathName) {
                 case '': {
                     return 1024 / 556;
+                }
+                case 'shop': {
+                    return 1024 / 684;
+                }
+                case 'looks': {
+                    return 1024 / 684;
                 }
                 default: {
                     return 1024 / 556;
