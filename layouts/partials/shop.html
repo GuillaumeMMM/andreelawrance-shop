@@ -6,8 +6,8 @@
         <div class="product-container">
             <a href="{{.url}}">
                 <div class="product-image">
-                    <img src="{{.imageUrl}}" class="primary-image">
-                    <img src="{{.imageUrl2}}" class="secondary-image">
+                    <img src="{{.imageUrl}}" class="primary-image" alt="{{(index .descriptionParagraphs 0).text}}">
+                    <img src="{{.imageUrl2}}" class="secondary-image" alt="{{(index .descriptionParagraphs 0).text}}">
                     <span class="sizes">{{.sizes}}</span>
                 </div>
                 <div class="product-title">

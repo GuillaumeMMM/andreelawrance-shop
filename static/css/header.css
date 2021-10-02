@@ -7,12 +7,6 @@
     color: white;
 }
 
-.header-container > h1 {
-    font-size: 1.5rem;
-    color: white;
-    white-space: nowrap;
-}
-
 a, a:hover, a:visited {
     color: inherit;
     text-decoration: none;

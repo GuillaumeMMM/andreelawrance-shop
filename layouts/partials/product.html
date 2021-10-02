@@ -7,7 +7,7 @@
                 {{ $productImages := .imagesUrls }}
 
                 {{ range $productImages}}
-                    <img src="{{.src}}">
+                    <img src="{{.src}}" alt="{{.alt}}">
                 {{ end }}
             </div>
             <div class="product-page-description">

@@ -1,24 +1,28 @@
-<head>
-    <title>André·e Lawrance - Contact</title>
-    <link rel="stylesheet" href="{{ "css/header.css" | relURL}}">
-    <link rel="stylesheet" href="{{ "css/styles.css" | relURL}}">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="ANDRE·E LAWRANCE, BEGINNER CLOTHING, CONTACTS">
+        <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL}}">
 
-    {{ block "shader-script" . }}{{ end }}
-</head>
-<body>
-    <div class="shader-background">
-        <canvas id="shader-web-background"></canvas>
-    </div>
+        <title>André·e Lawrance - Contact</title>
+        <link rel="stylesheet" href="{{ "css/header.css" | relURL}}">
+        <link rel="stylesheet" href="{{ "css/styles.css" | relURL}}">
 
-    <main class="container">
-        <div class="fixed-content">
-            {{ partial "header.html" . }}
+        {{ block "shader-script" . }}{{ end }}
+    </head>
+    <body>
+        <main class="container">
+            <div class="fixed-content">
+                {{ partial "header.html" . }}
 
-            {{ partial "sidebar.html" . }}
-        </div>
+                {{ partial "sidebar.html" . }}
+            </div>
 
-        {{ partial "contact.html" . }}
-    </main>
-    
-    {{ partial "footer.html" . }}
-</body>
+            {{ partial "contact.html" . }}
+        </main>
+        
+        {{ partial "footer.html" . }}
+    </body>
+</html>

@@ -2,11 +2,10 @@
     display: flex;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 5rem auto;
     justify-content: space-around;
     flex-wrap: wrap;
     flex: 1;
-    margin-top: 5rem;
 }
 
 .product-container {
