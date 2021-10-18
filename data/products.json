@@ -5,14 +5,16 @@
       "name": "Rain Jacket",
       "price": 220,
       "sizes": "S M",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51600725864_150814d153_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600725904_6e1174c24c_o.png",
       "url": "/shop/rainjacket",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51603752168_466b29d887.jpg", "alt": "rain jacket"},
+        {"src": "https://live.staticflickr.com/65535/51603536496_0fb10f5075.jpg", "alt": "rain jacket"},
+        {"src": "https://live.staticflickr.com/65535/51602713062_4a8c019e83.jpg", "alt": "rain jacket"},
+        {"src": "https://live.staticflickr.com/65535/51602712707_ece0b7cc0c.jpg", "alt": "rain jacket"},
+        {"src": "https://live.staticflickr.com/65535/51602712922_37bee7bda8.jpg", "alt": "rain jacket"},
+        {"src": "https://live.staticflickr.com/65535/51603536206_801632f46a.jpg", "alt": "rain jacket"}
       ],
       "descriptionParagraphs": [
         {"text": "Dark blue waterproof jacket with front zipper. Fully lined in satin. A tribute to going strawberry picking on a rainy day."}
@@ -24,14 +26,14 @@
       "shopifyId": "7127650402457",
       "price": 110,
       "sizes": "S M",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51600284383_77aa5d57f4_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600068316_7fc972c0b0_o.png",
       "url": "/shop/rainshorts",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51604419260_27d54c5e9a.jpg", "alt": "rain shorts"},
+        {"src": "https://live.staticflickr.com/65535/51604195209_8160a9c528.jpg", "alt": "rain shorts"},
+        {"src": "https://live.staticflickr.com/65535/51604419220_e8960e3a97.jpg", "alt": "rain shorts"},
+        {"src": "https://live.staticflickr.com/65535/51603535991_75ba9365de.jpg", "alt": "rain shorts"}
       ],
       "descriptionParagraphs": [
         {"text": "Dark blue waterproof shorts with flex elastic waistband and integrated cinch belt & pockets on the sides. Made for keeping the tights dry."}
@@ -39,40 +41,39 @@
     },
     {
       "id": "6",
-      "name": "Beginner T-shirt",
+      "name": "Beginner T-Shirt",
       "shopifyId": "7127651942553",
       "price": 40,
       "sizes": "S M L XL",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
-      "url": "/shop/rainjacket",
+      "imageUrl": "https://live.staticflickr.com/65535/51599242817_2288a51cdd_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600961575_c31fbcb02a_o.png",
+      "url": "/shop/beginnertshirt",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51604194884_9e22feafdc.jpg", "alt": "alttorecplace"},
+        {"src": "https://live.staticflickr.com/65535/51604445525_0802f1b983.jpg", "alt": "alttorecplace"},
+        {"src": "https://live.staticflickr.com/65535/51603535811_30a1c32777.jpg", "alt": "alttorecplace"}
       ],
       "descriptionParagraphs": [
-        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes. Being a beginner is a permanent state."}
+        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes. Being a beginner is a permanent state. Model is 1.75m and wearing size M."}
       ]
     },
     {
       "id": "7",
-      "name": "André·e T-shirt",
+      "name": "André·e T-Shirt",
       "shopifyId": "7127652630681",
       "price": 40,
       "sizes": "S M L XL",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
-      "url": "/shop/rainjacket",
+      "imageUrl": "https://live.staticflickr.com/65535/51600961510_8936e299c9_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600284308_da7bb1c6f7_o.png",
+      "url": "/shop/andreetshirt",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51603751653_3882396f2d.jpg", "alt": "beginner tshirt"},
+        {"src": "https://live.staticflickr.com/65535/51602738612_0b0d86d28b.jpg", "alt": "beginner tshirt"},
+        {"src": "https://live.staticflickr.com/65535/51603751613_6b7ba342fb.jpg", "alt": "beginner tshirt"},
+        {"src": "https://live.staticflickr.com/65535/51603535811_30a1c32777.jpg", "alt": "beginner tshirt"}
       ],
       "descriptionParagraphs": [
-        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes."}
+        {"text": "Only piece that's not waterproof. These 100% cotton t-shirts are also 100% BIO and fair wear labeled. Perfect addition to your favorite outdoor living clothes. Model is 1.75m and wearing size M."}
       ]
     },
     {
@@ -81,14 +82,14 @@
       "price": 90,
       "shopifyId": "7127653384345",
       "sizes": "ONE SIZE",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51600726239_36fc0f4f0e_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600726259_2070a04959_o.png",
       "url": "/shop/grocerybag1",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51604196404_261d9e5ffb.jpg", "alt": "bag 1"},
+        {"src": "https://live.staticflickr.com/65535/51603537326_fdd9c9d6d8.jpg", "alt": "bag 1"},
+        {"src": "https://live.staticflickr.com/65535/51603537311_6db65e065e.jpg", "alt": "bag 1"},
+        {"src": "https://live.staticflickr.com/65535/51602713797_1c12174c21.jpg", "alt": "bag 1"}
       ],
       "descriptionParagraphs": [
         {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
@@ -100,14 +101,15 @@
       "shopifyId": "7127654989977",
       "price": 90,
       "sizes": "ONE SIZE",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51600961745_625f370128_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600726219_af23face8b_o.png",
       "url": "/shop/grocerybag2",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51604196214_43f26e3a7f.jpg", "alt": "bag 2"},
+        {"src": "https://live.staticflickr.com/65535/51604196239_49d6f262df.jpg", "alt": "bag 2"},
+        {"src": "https://live.staticflickr.com/65535/51602713597_56d9e73d70.jpg", "alt": "bag 2"},
+        {"src": "https://live.staticflickr.com/65535/51603752768_6c2a9b813d.jpg", "alt": "bag 2"},
+        {"src": "https://live.staticflickr.com/65535/51602713777_42cfe3a0a0.jpg", "alt": "bag 2"}
       ],
       "descriptionParagraphs": [
         {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
@@ -119,14 +121,14 @@
       "shopifyId": "7127655350425",
       "price": 90,
       "sizes": "ONE SIZE",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51600284528_28a6e5618e_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51599243077_2a63775901_o.png",
       "url": "/shop/grocerybag3",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51604420045_7211431511.jpg", "alt": "bag 3"},
+        {"src": "https://live.staticflickr.com/65535/51603537101_89b136a318.jpg", "alt": "bag 3"},
+        {"src": "https://live.staticflickr.com/65535/51604419965_76cd38ea5b.jpg", "alt": "bag 3"},
+        {"src": "https://live.staticflickr.com/65535/51604195984_eb50f82a08.jpg", "alt": "bag 3"}
       ],
       "descriptionParagraphs": [
         {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}
@@ -138,14 +140,14 @@
       "shopifyId": "7127655448729",
       "price": 90,
       "sizes": "ONE SIZE",
-      "imageUrl": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg",
-      "imageUrl2": "https://live.staticflickr.com/65535/51403356232_562f4811f3.jpg",
+      "imageUrl": "https://live.staticflickr.com/65535/51599242932_38145b5224_o.png",
+      "imageUrl2": "https://live.staticflickr.com/65535/51600961680_71862a7453_o.png",
       "url": "/shop/grocerybag4",
       "imagesUrls": [
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"},
-        {"src": "https://live.staticflickr.com/65535/51403356007_18db10bb1d.jpg", "alt": "alttorecplace"}
+        {"src": "https://live.staticflickr.com/65535/51602713307_5ec70b3322.jpg", "alt": "bag 4"},
+        {"src": "https://live.staticflickr.com/65535/51603536726_f7989ee090.jpg", "alt": "bag 4"},
+        {"src": "https://live.staticflickr.com/65535/51604195729_a2b54d2d71.jpg", "alt": "bag 4"},
+        {"src": "https://live.staticflickr.com/65535/51603536676_ee82b2fa2b.jpg", "alt": "bag 4"}
       ],
       "descriptionParagraphs": [
         {"text": "Waterproof printed bag. Fully lined in satin. Printed with collages of Golf du Morbihan landscapes and hydrangea flowers."}

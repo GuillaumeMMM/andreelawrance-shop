@@ -85,7 +85,7 @@ main {
     color: white;
 }
 
-.contact-container a:hover {
+.contact-container a:hover, .looks-container a.link:hover {
     text-decoration: underline;
 }
 
